@@ -1,0 +1,985 @@
+[{
+	"resource": "/c:/Users/Administrator/Downloads/manhwa-recommendation/app/manhwa/[id]/calculation/page.tsx",
+	"owner": "typescript",
+	"code": "2695",
+	"severity": 8,
+	"message": "Left side of comma operator is unused and has no side effects.",
+	"source": "ts",
+	"startLineNumber": 195,
+	"startColumn": 17,
+	"endLineNumber": 195,
+	"endColumn": 19,
+	"tags": [
+		1
+	],
+	"extensionID": "vscode.typescript-language-features"
+},{
+	"resource": "/c:/Users/Administrator/Downloads/manhwa-recommendation/app/manhwa/[id]/calculation/page.tsx",
+	"owner": "typescript",
+	"code": "2304",
+	"severity": 8,
+	"message": "Cannot find name 'tags'.",
+	"source": "ts",
+	"startLineNumber": 196,
+	"startColumn": 9,
+	"endLineNumber": 196,
+	"endColumn": 13,
+	"extensionID": "vscode.typescript-language-features"
+},{
+	"resource": "/c:/Users/Administrator/Downloads/manhwa-recommendation/app/manhwa/[id]/calculation/page.tsx",
+	"owner": "typescript",
+	"code": "1005",
+	"severity": 8,
+	"message": "';' expected.",
+	"source": "ts",
+	"startLineNumber": 196,
+	"startColumn": 13,
+	"endLineNumber": 196,
+	"endColumn": 14,
+	"extensionID": "vscode.typescript-language-features"
+},{
+	"resource": "/c:/Users/Administrator/Downloads/manhwa-recommendation/app/manhwa/[id]/calculation/page.tsx",
+	"owner": "typescript",
+	"code": "2695",
+	"severity": 8,
+	"message": "Left side of comma operator is unused and has no side effects.",
+	"source": "ts",
+	"startLineNumber": 196,
+	"startColumn": 15,
+	"endLineNumber": 196,
+	"endColumn": 17,
+	"tags": [
+		1
+	],
+	"extensionID": "vscode.typescript-language-features"
+},{
+	"resource": "/c:/Users/Administrator/Downloads/manhwa-recommendation/app/manhwa/[id]/calculation/page.tsx",
+	"owner": "typescript",
+	"code": "2304",
+	"severity": 8,
+	"message": "Cannot find name 'themes'.",
+	"source": "ts",
+	"startLineNumber": 197,
+	"startColumn": 9,
+	"endLineNumber": 197,
+	"endColumn": 15,
+	"extensionID": "vscode.typescript-language-features"
+},{
+	"resource": "/c:/Users/Administrator/Downloads/manhwa-recommendation/app/manhwa/[id]/calculation/page.tsx",
+	"owner": "typescript",
+	"code": "1005",
+	"severity": 8,
+	"message": "';' expected.",
+	"source": "ts",
+	"startLineNumber": 197,
+	"startColumn": 15,
+	"endLineNumber": 197,
+	"endColumn": 16,
+	"extensionID": "vscode.typescript-language-features"
+},{
+	"resource": "/c:/Users/Administrator/Downloads/manhwa-recommendation/app/manhwa/[id]/calculation/page.tsx",
+	"owner": "typescript",
+	"code": "2695",
+	"severity": 8,
+	"message": "Left side of comma operator is unused and has no side effects.",
+	"source": "ts",
+	"startLineNumber": 197,
+	"startColumn": 17,
+	"endLineNumber": 197,
+	"endColumn": 19,
+	"tags": [
+		1
+	],
+	"extensionID": "vscode.typescript-language-features"
+},{
+	"resource": "/c:/Users/Administrator/Downloads/manhwa-recommendation/app/manhwa/[id]/calculation/page.tsx",
+	"owner": "typescript",
+	"code": "1109",
+	"severity": 8,
+	"message": "Expression expected.",
+	"source": "ts",
+	"startLineNumber": 198,
+	"startColumn": 7,
+	"endLineNumber": 198,
+	"endColumn": 8,
+	"extensionID": "vscode.typescript-language-features"
+},{
+	"resource": "/c:/Users/Administrator/Downloads/manhwa-recommendation/app/manhwa/[id]/calculation/page.tsx",
+	"owner": "typescript",
+	"code": "1128",
+	"severity": 8,
+	"message": "Declaration or statement expected.",
+	"source": "ts",
+	"startLineNumber": 198,
+	"startColumn": 8,
+	"endLineNumber": 198,
+	"endColumn": 9,
+	"extensionID": "vscode.typescript-language-features"
+},{
+	"resource": "/c:/Users/Administrator/Downloads/manhwa-recommendation/app/manhwa/[id]/calculation/page.tsx",
+	"owner": "typescript",
+	"code": "2695",
+	"severity": 8,
+	"message": "Left side of comma operator is unused and has no side effects.",
+	"source": "ts",
+	"startLineNumber": 200,
+	"startColumn": 17,
+	"endLineNumber": 200,
+	"endColumn": 19,
+	"tags": [
+		1
+	],
+	"extensionID": "vscode.typescript-language-features"
+},{
+	"resource": "/c:/Users/Administrator/Downloads/manhwa-recommendation/app/manhwa/[id]/calculation/page.tsx",
+	"owner": "typescript",
+	"code": "2304",
+	"severity": 8,
+	"message": "Cannot find name 'target'.",
+	"source": "ts",
+	"startLineNumber": 201,
+	"startColumn": 9,
+	"endLineNumber": 201,
+	"endColumn": 15,
+	"extensionID": "vscode.typescript-language-features"
+},{
+	"resource": "/c:/Users/Administrator/Downloads/manhwa-recommendation/app/manhwa/[id]/calculation/page.tsx",
+	"owner": "typescript",
+	"code": "1005",
+	"severity": 8,
+	"message": "';' expected.",
+	"source": "ts",
+	"startLineNumber": 201,
+	"startColumn": 15,
+	"endLineNumber": 201,
+	"endColumn": 16,
+	"extensionID": "vscode.typescript-language-features"
+},{
+	"resource": "/c:/Users/Administrator/Downloads/manhwa-recommendation/app/manhwa/[id]/calculation/page.tsx",
+	"owner": "typescript",
+	"code": "2695",
+	"severity": 8,
+	"message": "Left side of comma operator is unused and has no side effects.",
+	"source": "ts",
+	"startLineNumber": 201,
+	"startColumn": 17,
+	"endLineNumber": 201,
+	"endColumn": 19,
+	"tags": [
+		1
+	],
+	"extensionID": "vscode.typescript-language-features"
+},{
+	"resource": "/c:/Users/Administrator/Downloads/manhwa-recommendation/app/manhwa/[id]/calculation/page.tsx",
+	"owner": "typescript",
+	"code": "1109",
+	"severity": 8,
+	"message": "Expression expected.",
+	"source": "ts",
+	"startLineNumber": 202,
+	"startColumn": 7,
+	"endLineNumber": 202,
+	"endColumn": 8,
+	"extensionID": "vscode.typescript-language-features"
+},{
+	"resource": "/c:/Users/Administrator/Downloads/manhwa-recommendation/app/manhwa/[id]/calculation/page.tsx",
+	"owner": "typescript",
+	"code": "1128",
+	"severity": 8,
+	"message": "Declaration or statement expected.",
+	"source": "ts",
+	"startLineNumber": 202,
+	"startColumn": 8,
+	"endLineNumber": 202,
+	"endColumn": 9,
+	"extensionID": "vscode.typescript-language-features"
+},{
+	"resource": "/c:/Users/Administrator/Downloads/manhwa-recommendation/app/manhwa/[id]/calculation/page.tsx",
+	"owner": "typescript",
+	"code": "2695",
+	"severity": 8,
+	"message": "Left side of comma operator is unused and has no side effects.",
+	"source": "ts",
+	"startLineNumber": 203,
+	"startColumn": 20,
+	"endLineNumber": 203,
+	"endColumn": 22,
+	"tags": [
+		1
+	],
+	"extensionID": "vscode.typescript-language-features"
+},{
+	"resource": "/c:/Users/Administrator/Downloads/manhwa-recommendation/app/manhwa/[id]/calculation/page.tsx",
+	"owner": "typescript",
+	"code": "2304",
+	"severity": 8,
+	"message": "Cannot find name 'cosine'.",
+	"source": "ts",
+	"startLineNumber": 204,
+	"startColumn": 7,
+	"endLineNumber": 204,
+	"endColumn": 13,
+	"extensionID": "vscode.typescript-language-features"
+},{
+	"resource": "/c:/Users/Administrator/Downloads/manhwa-recommendation/app/manhwa/[id]/calculation/page.tsx",
+	"owner": "typescript",
+	"code": "1005",
+	"severity": 8,
+	"message": "';' expected.",
+	"source": "ts",
+	"startLineNumber": 204,
+	"startColumn": 13,
+	"endLineNumber": 204,
+	"endColumn": 14,
+	"extensionID": "vscode.typescript-language-features"
+},{
+	"resource": "/c:/Users/Administrator/Downloads/manhwa-recommendation/app/manhwa/[id]/calculation/page.tsx",
+	"owner": "typescript",
+	"code": "2695",
+	"severity": 8,
+	"message": "Left side of comma operator is unused and has no side effects.",
+	"source": "ts",
+	"startLineNumber": 205,
+	"startColumn": 21,
+	"endLineNumber": 205,
+	"endColumn": 22,
+	"tags": [
+		1
+	],
+	"extensionID": "vscode.typescript-language-features"
+},{
+	"resource": "/c:/Users/Administrator/Downloads/manhwa-recommendation/app/manhwa/[id]/calculation/page.tsx",
+	"owner": "typescript",
+	"code": "2304",
+	"severity": 8,
+	"message": "Cannot find name 'dotProduct'.",
+	"source": "ts",
+	"startLineNumber": 206,
+	"startColumn": 9,
+	"endLineNumber": 206,
+	"endColumn": 19,
+	"extensionID": "vscode.typescript-language-features"
+},{
+	"resource": "/c:/Users/Administrator/Downloads/manhwa-recommendation/app/manhwa/[id]/calculation/page.tsx",
+	"owner": "typescript",
+	"code": "1005",
+	"severity": 8,
+	"message": "';' expected.",
+	"source": "ts",
+	"startLineNumber": 206,
+	"startColumn": 19,
+	"endLineNumber": 206,
+	"endColumn": 20,
+	"extensionID": "vscode.typescript-language-features"
+},{
+	"resource": "/c:/Users/Administrator/Downloads/manhwa-recommendation/app/manhwa/[id]/calculation/page.tsx",
+	"owner": "typescript",
+	"code": "2695",
+	"severity": 8,
+	"message": "Left side of comma operator is unused and has no side effects.",
+	"source": "ts",
+	"startLineNumber": 206,
+	"startColumn": 21,
+	"endLineNumber": 206,
+	"endColumn": 22,
+	"tags": [
+		1
+	],
+	"extensionID": "vscode.typescript-language-features"
+},{
+	"resource": "/c:/Users/Administrator/Downloads/manhwa-recommendation/app/manhwa/[id]/calculation/page.tsx",
+	"owner": "typescript",
+	"code": "2304",
+	"severity": 8,
+	"message": "Cannot find name 'magnitudeA'.",
+	"source": "ts",
+	"startLineNumber": 207,
+	"startColumn": 9,
+	"endLineNumber": 207,
+	"endColumn": 19,
+	"extensionID": "vscode.typescript-language-features"
+},{
+	"resource": "/c:/Users/Administrator/Downloads/manhwa-recommendation/app/manhwa/[id]/calculation/page.tsx",
+	"owner": "typescript",
+	"code": "1005",
+	"severity": 8,
+	"message": "';' expected.",
+	"source": "ts",
+	"startLineNumber": 207,
+	"startColumn": 19,
+	"endLineNumber": 207,
+	"endColumn": 20,
+	"extensionID": "vscode.typescript-language-features"
+},{
+	"resource": "/c:/Users/Administrator/Downloads/manhwa-recommendation/app/manhwa/[id]/calculation/page.tsx",
+	"owner": "typescript",
+	"code": "2695",
+	"severity": 8,
+	"message": "Left side of comma operator is unused and has no side effects.",
+	"source": "ts",
+	"startLineNumber": 207,
+	"startColumn": 21,
+	"endLineNumber": 207,
+	"endColumn": 22,
+	"tags": [
+		1
+	],
+	"extensionID": "vscode.typescript-language-features"
+},{
+	"resource": "/c:/Users/Administrator/Downloads/manhwa-recommendation/app/manhwa/[id]/calculation/page.tsx",
+	"owner": "typescript",
+	"code": "2304",
+	"severity": 8,
+	"message": "Cannot find name 'magnitudeB'.",
+	"source": "ts",
+	"startLineNumber": 208,
+	"startColumn": 9,
+	"endLineNumber": 208,
+	"endColumn": 19,
+	"extensionID": "vscode.typescript-language-features"
+},{
+	"resource": "/c:/Users/Administrator/Downloads/manhwa-recommendation/app/manhwa/[id]/calculation/page.tsx",
+	"owner": "typescript",
+	"code": "1005",
+	"severity": 8,
+	"message": "';' expected.",
+	"source": "ts",
+	"startLineNumber": 208,
+	"startColumn": 19,
+	"endLineNumber": 208,
+	"endColumn": 20,
+	"extensionID": "vscode.typescript-language-features"
+},{
+	"resource": "/c:/Users/Administrator/Downloads/manhwa-recommendation/app/manhwa/[id]/calculation/page.tsx",
+	"owner": "typescript",
+	"code": "2695",
+	"severity": 8,
+	"message": "Left side of comma operator is unused and has no side effects.",
+	"source": "ts",
+	"startLineNumber": 208,
+	"startColumn": 21,
+	"endLineNumber": 208,
+	"endColumn": 22,
+	"tags": [
+		1
+	],
+	"extensionID": "vscode.typescript-language-features"
+},{
+	"resource": "/c:/Users/Administrator/Downloads/manhwa-recommendation/app/manhwa/[id]/calculation/page.tsx",
+	"owner": "typescript",
+	"code": "1109",
+	"severity": 8,
+	"message": "Expression expected.",
+	"source": "ts",
+	"startLineNumber": 209,
+	"startColumn": 7,
+	"endLineNumber": 209,
+	"endColumn": 8,
+	"extensionID": "vscode.typescript-language-features"
+},{
+	"resource": "/c:/Users/Administrator/Downloads/manhwa-recommendation/app/manhwa/[id]/calculation/page.tsx",
+	"owner": "typescript",
+	"code": "1128",
+	"severity": 8,
+	"message": "Declaration or statement expected.",
+	"source": "ts",
+	"startLineNumber": 209,
+	"startColumn": 8,
+	"endLineNumber": 209,
+	"endColumn": 9,
+	"extensionID": "vscode.typescript-language-features"
+},{
+	"resource": "/c:/Users/Administrator/Downloads/manhwa-recommendation/app/manhwa/[id]/calculation/page.tsx",
+	"owner": "typescript",
+	"code": "2695",
+	"severity": 8,
+	"message": "Left side of comma operator is unused and has no side effects.",
+	"source": "ts",
+	"startLineNumber": 210,
+	"startColumn": 24,
+	"endLineNumber": 210,
+	"endColumn": 26,
+	"tags": [
+		1
+	],
+	"extensionID": "vscode.typescript-language-features"
+},{
+	"resource": "/c:/Users/Administrator/Downloads/manhwa-recommendation/app/manhwa/[id]/calculation/page.tsx",
+	"owner": "typescript",
+	"code": "2304",
+	"severity": 8,
+	"message": "Cannot find name 'magnitudeASteps'.",
+	"source": "ts",
+	"startLineNumber": 211,
+	"startColumn": 7,
+	"endLineNumber": 211,
+	"endColumn": 22,
+	"extensionID": "vscode.typescript-language-features"
+},{
+	"resource": "/c:/Users/Administrator/Downloads/manhwa-recommendation/app/manhwa/[id]/calculation/page.tsx",
+	"owner": "typescript",
+	"code": "1005",
+	"severity": 8,
+	"message": "';' expected.",
+	"source": "ts",
+	"startLineNumber": 211,
+	"startColumn": 22,
+	"endLineNumber": 211,
+	"endColumn": 23,
+	"extensionID": "vscode.typescript-language-features"
+},{
+	"resource": "/c:/Users/Administrator/Downloads/manhwa-recommendation/app/manhwa/[id]/calculation/page.tsx",
+	"owner": "typescript",
+	"code": "2695",
+	"severity": 8,
+	"message": "Left side of comma operator is unused and has no side effects.",
+	"source": "ts",
+	"startLineNumber": 212,
+	"startColumn": 16,
+	"endLineNumber": 212,
+	"endColumn": 18,
+	"tags": [
+		1
+	],
+	"extensionID": "vscode.typescript-language-features"
+},{
+	"resource": "/c:/Users/Administrator/Downloads/manhwa-recommendation/app/manhwa/[id]/calculation/page.tsx",
+	"owner": "typescript",
+	"code": "2304",
+	"severity": 8,
+	"message": "Cannot find name 'sumOfSquares'.",
+	"source": "ts",
+	"startLineNumber": 213,
+	"startColumn": 9,
+	"endLineNumber": 213,
+	"endColumn": 21,
+	"extensionID": "vscode.typescript-language-features"
+},{
+	"resource": "/c:/Users/Administrator/Downloads/manhwa-recommendation/app/manhwa/[id]/calculation/page.tsx",
+	"owner": "typescript",
+	"code": "1005",
+	"severity": 8,
+	"message": "';' expected.",
+	"source": "ts",
+	"startLineNumber": 213,
+	"startColumn": 21,
+	"endLineNumber": 213,
+	"endColumn": 22,
+	"extensionID": "vscode.typescript-language-features"
+},{
+	"resource": "/c:/Users/Administrator/Downloads/manhwa-recommendation/app/manhwa/[id]/calculation/page.tsx",
+	"owner": "typescript",
+	"code": "2695",
+	"severity": 8,
+	"message": "Left side of comma operator is unused and has no side effects.",
+	"source": "ts",
+	"startLineNumber": 213,
+	"startColumn": 23,
+	"endLineNumber": 213,
+	"endColumn": 24,
+	"tags": [
+		1
+	],
+	"extensionID": "vscode.typescript-language-features"
+},{
+	"resource": "/c:/Users/Administrator/Downloads/manhwa-recommendation/app/manhwa/[id]/calculation/page.tsx",
+	"owner": "typescript",
+	"code": "1109",
+	"severity": 8,
+	"message": "Expression expected.",
+	"source": "ts",
+	"startLineNumber": 214,
+	"startColumn": 7,
+	"endLineNumber": 214,
+	"endColumn": 8,
+	"extensionID": "vscode.typescript-language-features"
+},{
+	"resource": "/c:/Users/Administrator/Downloads/manhwa-recommendation/app/manhwa/[id]/calculation/page.tsx",
+	"owner": "typescript",
+	"code": "1128",
+	"severity": 8,
+	"message": "Declaration or statement expected.",
+	"source": "ts",
+	"startLineNumber": 214,
+	"startColumn": 8,
+	"endLineNumber": 214,
+	"endColumn": 9,
+	"extensionID": "vscode.typescript-language-features"
+},{
+	"resource": "/c:/Users/Administrator/Downloads/manhwa-recommendation/app/manhwa/[id]/calculation/page.tsx",
+	"owner": "typescript",
+	"code": "2695",
+	"severity": 8,
+	"message": "Left side of comma operator is unused and has no side effects.",
+	"source": "ts",
+	"startLineNumber": 216,
+	"startColumn": 16,
+	"endLineNumber": 216,
+	"endColumn": 18,
+	"tags": [
+		1
+	],
+	"extensionID": "vscode.typescript-language-features"
+},{
+	"resource": "/c:/Users/Administrator/Downloads/manhwa-recommendation/app/manhwa/[id]/calculation/page.tsx",
+	"owner": "typescript",
+	"code": "2304",
+	"severity": 8,
+	"message": "Cannot find name 'sumOfSquares'.",
+	"source": "ts",
+	"startLineNumber": 217,
+	"startColumn": 9,
+	"endLineNumber": 217,
+	"endColumn": 21,
+	"extensionID": "vscode.typescript-language-features"
+},{
+	"resource": "/c:/Users/Administrator/Downloads/manhwa-recommendation/app/manhwa/[id]/calculation/page.tsx",
+	"owner": "typescript",
+	"code": "1005",
+	"severity": 8,
+	"message": "';' expected.",
+	"source": "ts",
+	"startLineNumber": 217,
+	"startColumn": 21,
+	"endLineNumber": 217,
+	"endColumn": 22,
+	"extensionID": "vscode.typescript-language-features"
+},{
+	"resource": "/c:/Users/Administrator/Downloads/manhwa-recommendation/app/manhwa/[id]/calculation/page.tsx",
+	"owner": "typescript",
+	"code": "2695",
+	"severity": 8,
+	"message": "Left side of comma operator is unused and has no side effects.",
+	"source": "ts",
+	"startLineNumber": 217,
+	"startColumn": 23,
+	"endLineNumber": 217,
+	"endColumn": 24,
+	"tags": [
+		1
+	],
+	"extensionID": "vscode.typescript-language-features"
+},{
+	"resource": "/c:/Users/Administrator/Downloads/manhwa-recommendation/app/manhwa/[id]/calculation/page.tsx",
+	"owner": "typescript",
+	"code": "1109",
+	"severity": 8,
+	"message": "Expression expected.",
+	"source": "ts",
+	"startLineNumber": 218,
+	"startColumn": 7,
+	"endLineNumber": 218,
+	"endColumn": 8,
+	"extensionID": "vscode.typescript-language-features"
+},{
+	"resource": "/c:/Users/Administrator/Downloads/manhwa-recommendation/app/manhwa/[id]/calculation/page.tsx",
+	"owner": "typescript",
+	"code": "1128",
+	"severity": 8,
+	"message": "Declaration or statement expected.",
+	"source": "ts",
+	"startLineNumber": 218,
+	"startColumn": 8,
+	"endLineNumber": 218,
+	"endColumn": 9,
+	"extensionID": "vscode.typescript-language-features"
+},{
+	"resource": "/c:/Users/Administrator/Downloads/manhwa-recommendation/app/manhwa/[id]/calculation/page.tsx",
+	"owner": "typescript",
+	"code": "2695",
+	"severity": 8,
+	"message": "Left side of comma operator is unused and has no side effects.",
+	"source": "ts",
+	"startLineNumber": 219,
+	"startColumn": 19,
+	"endLineNumber": 219,
+	"endColumn": 20,
+	"tags": [
+		1
+	],
+	"extensionID": "vscode.typescript-language-features"
+},{
+	"resource": "/c:/Users/Administrator/Downloads/manhwa-recommendation/app/manhwa/[id]/calculation/page.tsx",
+	"owner": "typescript",
+	"code": "2304",
+	"severity": 8,
+	"message": "Cannot find name 'evaluationMetrics'.",
+	"source": "ts",
+	"startLineNumber": 220,
+	"startColumn": 7,
+	"endLineNumber": 220,
+	"endColumn": 24,
+	"extensionID": "vscode.typescript-language-features"
+},{
+	"resource": "/c:/Users/Administrator/Downloads/manhwa-recommendation/app/manhwa/[id]/calculation/page.tsx",
+	"owner": "typescript",
+	"code": "1005",
+	"severity": 8,
+	"message": "';' expected.",
+	"source": "ts",
+	"startLineNumber": 220,
+	"startColumn": 24,
+	"endLineNumber": 220,
+	"endColumn": 25,
+	"extensionID": "vscode.typescript-language-features"
+},{
+	"resource": "/c:/Users/Administrator/Downloads/manhwa-recommendation/app/manhwa/[id]/calculation/page.tsx",
+	"owner": "typescript",
+	"code": "2695",
+	"severity": 8,
+	"message": "Left side of comma operator is unused and has no side effects.",
+	"source": "ts",
+	"startLineNumber": 221,
+	"startColumn": 20,
+	"endLineNumber": 221,
+	"endColumn": 23,
+	"tags": [
+		1
+	],
+	"extensionID": "vscode.typescript-language-features"
+},{
+	"resource": "/c:/Users/Administrator/Downloads/manhwa-recommendation/app/manhwa/[id]/calculation/page.tsx",
+	"owner": "typescript",
+	"code": "2304",
+	"severity": 8,
+	"message": "Cannot find name 'confusionMatrix'.",
+	"source": "ts",
+	"startLineNumber": 222,
+	"startColumn": 9,
+	"endLineNumber": 222,
+	"endColumn": 24,
+	"extensionID": "vscode.typescript-language-features"
+},{
+	"resource": "/c:/Users/Administrator/Downloads/manhwa-recommendation/app/manhwa/[id]/calculation/page.tsx",
+	"owner": "typescript",
+	"code": "1005",
+	"severity": 8,
+	"message": "';' expected.",
+	"source": "ts",
+	"startLineNumber": 222,
+	"startColumn": 24,
+	"endLineNumber": 222,
+	"endColumn": 25,
+	"extensionID": "vscode.typescript-language-features"
+},{
+	"resource": "/c:/Users/Administrator/Downloads/manhwa-recommendation/app/manhwa/[id]/calculation/page.tsx",
+	"owner": "typescript",
+	"code": "2695",
+	"severity": 8,
+	"message": "Left side of comma operator is unused and has no side effects.",
+	"source": "ts",
+	"startLineNumber": 222,
+	"startColumn": 32,
+	"endLineNumber": 222,
+	"endColumn": 33,
+	"tags": [
+		1
+	],
+	"extensionID": "vscode.typescript-language-features"
+},{
+	"resource": "/c:/Users/Administrator/Downloads/manhwa-recommendation/app/manhwa/[id]/calculation/page.tsx",
+	"owner": "typescript",
+	"code": "2304",
+	"severity": 8,
+	"message": "Cannot find name 'fp'.",
+	"source": "ts",
+	"startLineNumber": 222,
+	"startColumn": 35,
+	"endLineNumber": 222,
+	"endColumn": 37,
+	"extensionID": "vscode.typescript-language-features"
+},{
+	"resource": "/c:/Users/Administrator/Downloads/manhwa-recommendation/app/manhwa/[id]/calculation/page.tsx",
+	"owner": "typescript",
+	"code": "1005",
+	"severity": 8,
+	"message": "';' expected.",
+	"source": "ts",
+	"startLineNumber": 222,
+	"startColumn": 37,
+	"endLineNumber": 222,
+	"endColumn": 38,
+	"extensionID": "vscode.typescript-language-features"
+},{
+	"resource": "/c:/Users/Administrator/Downloads/manhwa-recommendation/app/manhwa/[id]/calculation/page.tsx",
+	"owner": "typescript",
+	"code": "2695",
+	"severity": 8,
+	"message": "Left side of comma operator is unused and has no side effects.",
+	"source": "ts",
+	"startLineNumber": 222,
+	"startColumn": 39,
+	"endLineNumber": 222,
+	"endColumn": 40,
+	"tags": [
+		1
+	],
+	"extensionID": "vscode.typescript-language-features"
+},{
+	"resource": "/c:/Users/Administrator/Downloads/manhwa-recommendation/app/manhwa/[id]/calculation/page.tsx",
+	"owner": "typescript",
+	"code": "2304",
+	"severity": 8,
+	"message": "Cannot find name 'tn'.",
+	"source": "ts",
+	"startLineNumber": 222,
+	"startColumn": 42,
+	"endLineNumber": 222,
+	"endColumn": 44,
+	"extensionID": "vscode.typescript-language-features"
+},{
+	"resource": "/c:/Users/Administrator/Downloads/manhwa-recommendation/app/manhwa/[id]/calculation/page.tsx",
+	"owner": "typescript",
+	"code": "1005",
+	"severity": 8,
+	"message": "';' expected.",
+	"source": "ts",
+	"startLineNumber": 222,
+	"startColumn": 44,
+	"endLineNumber": 222,
+	"endColumn": 45,
+	"extensionID": "vscode.typescript-language-features"
+},{
+	"resource": "/c:/Users/Administrator/Downloads/manhwa-recommendation/app/manhwa/[id]/calculation/page.tsx",
+	"owner": "typescript",
+	"code": "2695",
+	"severity": 8,
+	"message": "Left side of comma operator is unused and has no side effects.",
+	"source": "ts",
+	"startLineNumber": 222,
+	"startColumn": 46,
+	"endLineNumber": 222,
+	"endColumn": 47,
+	"tags": [
+		1
+	],
+	"extensionID": "vscode.typescript-language-features"
+},{
+	"resource": "/c:/Users/Administrator/Downloads/manhwa-recommendation/app/manhwa/[id]/calculation/page.tsx",
+	"owner": "typescript",
+	"code": "2304",
+	"severity": 8,
+	"message": "Cannot find name 'fn'.",
+	"source": "ts",
+	"startLineNumber": 222,
+	"startColumn": 49,
+	"endLineNumber": 222,
+	"endColumn": 51,
+	"extensionID": "vscode.typescript-language-features"
+},{
+	"resource": "/c:/Users/Administrator/Downloads/manhwa-recommendation/app/manhwa/[id]/calculation/page.tsx",
+	"owner": "typescript",
+	"code": "1005",
+	"severity": 8,
+	"message": "';' expected.",
+	"source": "ts",
+	"startLineNumber": 222,
+	"startColumn": 51,
+	"endLineNumber": 222,
+	"endColumn": 52,
+	"extensionID": "vscode.typescript-language-features"
+},{
+	"resource": "/c:/Users/Administrator/Downloads/manhwa-recommendation/app/manhwa/[id]/calculation/page.tsx",
+	"owner": "typescript",
+	"code": "1128",
+	"severity": 8,
+	"message": "Declaration or statement expected.",
+	"source": "ts",
+	"startLineNumber": 222,
+	"startColumn": 56,
+	"endLineNumber": 222,
+	"endColumn": 57,
+	"extensionID": "vscode.typescript-language-features"
+},{
+	"resource": "/c:/Users/Administrator/Downloads/manhwa-recommendation/app/manhwa/[id]/calculation/page.tsx",
+	"owner": "typescript",
+	"code": "2695",
+	"severity": 8,
+	"message": "Left side of comma operator is unused and has no side effects.",
+	"source": "ts",
+	"startLineNumber": 223,
+	"startColumn": 20,
+	"endLineNumber": 223,
+	"endColumn": 21,
+	"tags": [
+		1
+	],
+	"extensionID": "vscode.typescript-language-features"
+},{
+	"resource": "/c:/Users/Administrator/Downloads/manhwa-recommendation/app/manhwa/[id]/calculation/page.tsx",
+	"owner": "typescript",
+	"code": "2304",
+	"severity": 8,
+	"message": "Cannot find name 'recall'.",
+	"source": "ts",
+	"startLineNumber": 224,
+	"startColumn": 9,
+	"endLineNumber": 224,
+	"endColumn": 15,
+	"extensionID": "vscode.typescript-language-features"
+},{
+	"resource": "/c:/Users/Administrator/Downloads/manhwa-recommendation/app/manhwa/[id]/calculation/page.tsx",
+	"owner": "typescript",
+	"code": "1005",
+	"severity": 8,
+	"message": "';' expected.",
+	"source": "ts",
+	"startLineNumber": 224,
+	"startColumn": 15,
+	"endLineNumber": 224,
+	"endColumn": 16,
+	"extensionID": "vscode.typescript-language-features"
+},{
+	"resource": "/c:/Users/Administrator/Downloads/manhwa-recommendation/app/manhwa/[id]/calculation/page.tsx",
+	"owner": "typescript",
+	"code": "2695",
+	"severity": 8,
+	"message": "Left side of comma operator is unused and has no side effects.",
+	"source": "ts",
+	"startLineNumber": 224,
+	"startColumn": 17,
+	"endLineNumber": 224,
+	"endColumn": 18,
+	"tags": [
+		1
+	],
+	"extensionID": "vscode.typescript-language-features"
+},{
+	"resource": "/c:/Users/Administrator/Downloads/manhwa-recommendation/app/manhwa/[id]/calculation/page.tsx",
+	"owner": "typescript",
+	"code": "2304",
+	"severity": 8,
+	"message": "Cannot find name 'accuracy'.",
+	"source": "ts",
+	"startLineNumber": 225,
+	"startColumn": 9,
+	"endLineNumber": 225,
+	"endColumn": 17,
+	"extensionID": "vscode.typescript-language-features"
+},{
+	"resource": "/c:/Users/Administrator/Downloads/manhwa-recommendation/app/manhwa/[id]/calculation/page.tsx",
+	"owner": "typescript",
+	"code": "1005",
+	"severity": 8,
+	"message": "';' expected.",
+	"source": "ts",
+	"startLineNumber": 225,
+	"startColumn": 17,
+	"endLineNumber": 225,
+	"endColumn": 18,
+	"extensionID": "vscode.typescript-language-features"
+},{
+	"resource": "/c:/Users/Administrator/Downloads/manhwa-recommendation/app/manhwa/[id]/calculation/page.tsx",
+	"owner": "typescript",
+	"code": "2695",
+	"severity": 8,
+	"message": "Left side of comma operator is unused and has no side effects.",
+	"source": "ts",
+	"startLineNumber": 225,
+	"startColumn": 19,
+	"endLineNumber": 225,
+	"endColumn": 20,
+	"tags": [
+		1
+	],
+	"extensionID": "vscode.typescript-language-features"
+},{
+	"resource": "/c:/Users/Administrator/Downloads/manhwa-recommendation/app/manhwa/[id]/calculation/page.tsx",
+	"owner": "typescript",
+	"code": "2304",
+	"severity": 8,
+	"message": "Cannot find name 'f1Score'.",
+	"source": "ts",
+	"startLineNumber": 226,
+	"startColumn": 9,
+	"endLineNumber": 226,
+	"endColumn": 16,
+	"extensionID": "vscode.typescript-language-features"
+},{
+	"resource": "/c:/Users/Administrator/Downloads/manhwa-recommendation/app/manhwa/[id]/calculation/page.tsx",
+	"owner": "typescript",
+	"code": "1005",
+	"severity": 8,
+	"message": "';' expected.",
+	"source": "ts",
+	"startLineNumber": 226,
+	"startColumn": 16,
+	"endLineNumber": 226,
+	"endColumn": 17,
+	"extensionID": "vscode.typescript-language-features"
+},{
+	"resource": "/c:/Users/Administrator/Downloads/manhwa-recommendation/app/manhwa/[id]/calculation/page.tsx",
+	"owner": "typescript",
+	"code": "2695",
+	"severity": 8,
+	"message": "Left side of comma operator is unused and has no side effects.",
+	"source": "ts",
+	"startLineNumber": 226,
+	"startColumn": 18,
+	"endLineNumber": 226,
+	"endColumn": 19,
+	"tags": [
+		1
+	],
+	"extensionID": "vscode.typescript-language-features"
+},{
+	"resource": "/c:/Users/Administrator/Downloads/manhwa-recommendation/app/manhwa/[id]/calculation/page.tsx",
+	"owner": "typescript",
+	"code": "1109",
+	"severity": 8,
+	"message": "Expression expected.",
+	"source": "ts",
+	"startLineNumber": 227,
+	"startColumn": 7,
+	"endLineNumber": 227,
+	"endColumn": 8,
+	"extensionID": "vscode.typescript-language-features"
+},{
+	"resource": "/c:/Users/Administrator/Downloads/manhwa-recommendation/app/manhwa/[id]/calculation/page.tsx",
+	"owner": "typescript",
+	"code": "1128",
+	"severity": 8,
+	"message": "Declaration or statement expected.",
+	"source": "ts",
+	"startLineNumber": 227,
+	"startColumn": 8,
+	"endLineNumber": 227,
+	"endColumn": 9,
+	"extensionID": "vscode.typescript-language-features"
+},{
+	"resource": "/c:/Users/Administrator/Downloads/manhwa-recommendation/app/manhwa/[id]/calculation/page.tsx",
+	"owner": "typescript",
+	"code": "2304",
+	"severity": 8,
+	"message": "Cannot find name 'calculationData'.",
+	"source": "ts",
+	"startLineNumber": 232,
+	"startColumn": 8,
+	"endLineNumber": 232,
+	"endColumn": 23,
+	"extensionID": "vscode.typescript-language-features"
+},{
+	"resource": "/c:/Users/Administrator/Downloads/manhwa-recommendation/app/manhwa/[id]/calculation/page.tsx",
+	"owner": "typescript",
+	"code": "2304",
+	"severity": 8,
+	"message": "Cannot find name 'params'.",
+	"source": "ts",
+	"startLineNumber": 233,
+	"startColumn": 25,
+	"endLineNumber": 233,
+	"endColumn": 31,
+	"extensionID": "vscode.typescript-language-features"
+},{
+	"resource": "/c:/Users/Administrator/Downloads/manhwa-recommendation/app/manhwa/[id]/calculation/page.tsx",
+	"owner": "typescript",
+	"code": "1128",
+	"severity": 8,
+	"message": "Declaration or statement expected.",
+	"source": "ts",
+	"startLineNumber": 832,
+	"startColumn": 1,
+	"endLineNumber": 832,
+	"endColumn": 2,
+	"extensionID": "vscode.typescript-language-features"
+}]
