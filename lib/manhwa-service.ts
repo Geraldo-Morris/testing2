@@ -5,7 +5,7 @@ let manhwaData: Manhwa[] = []
 let isDataLoaded = false
 
 // CSV file path - use relative URL path for production compatibility
-const CSV_PATH = typeof window !== 'undefined' ? new URL('/manhwa_data.csv', window.location.origin).toString() : '/manhwa_data.csv'
+const CSV_PATH = "/manhwa_data.csv"
 
 // Function to load CSV data
 async function loadCSVData(): Promise<Manhwa[]> {
@@ -15,16 +15,7 @@ async function loadCSVData(): Promise<Manhwa[]> {
 
   try {
     console.log("Loading CSV data from:", CSV_PATH)
-    let response;
-    try {
-      response = await fetch(CSV_PATH)
-    } catch (fetchError) {
-      console.error("Fetch error:", fetchError)
-      // Try with an absolute path as fallback
-      const fallbackPath = '/manhwa_data.csv';
-      console.log("Trying fallback path:", fallbackPath)
-      response = await fetch(fallbackPath)
-    }
+    const response = await fetch(CSV_PATH)
     const csvText = await response.text()
 
     // Parse CSV
