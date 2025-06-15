@@ -5,7 +5,7 @@ let manhwaData: Manhwa[] = []
 let isDataLoaded = false
 
 // CSV file path - use relative URL path for production compatibility
-const CSV_PATH = "/manhwa_data.csv"
+const CSV_PATH = "https://manhwarecommender.netlify.app/manhwa_data.csv"
 
 // Function to load CSV data
 async function loadCSVData(): Promise<Manhwa[]> {
