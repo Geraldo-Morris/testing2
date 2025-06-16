@@ -466,15 +466,14 @@ async function CalculationPage(props: CalculationPageProps) {
                   IDF = log(Total number of documents / Number of documents containing the term)
                 </p>
                 <div className="grid md:grid-cols-2 gap-6">
-                    {/* Source/User IDF Scores - Assuming IDF is global and same for both, display once or pick one source */}
+                    {/* Source/User IDF Scores */}
                     <div>
-                        <h5 className="font-medium mb-2 text-center">Global IDF Scores</h5>
+                        <h5 className="font-medium mb-2 text-center">{(sourceManhwa?.title || "User") + " IDF Scores"}</h5>
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
                             <div>
                                 <h6 className="font-medium mb-2 text-sm">Genre IDF</h6>
                                 <div className="space-y-2 overflow-y-auto">
-                                {/* Displaying from source/user; could also be target if structure guarantees presence */}
-                                {(calculationData.sourceTfidf?.genres || calculationData.userTfidf?.genres || calculationData.targetTfidf?.genres)?.map((item: any) => (
+                                {(calculationData.sourceTfidf?.genres || calculationData.userTfidf?.genres)?.map((item: any) => (
                                     <div key={item.term} className="flex justify-between items-center p-2 bg-blue-50 rounded">
                                     <span className="font-medium text-xs">{item.term}</span>
                                     <div className="text-right">
@@ -486,7 +485,7 @@ async function CalculationPage(props: CalculationPageProps) {
                                     </div>
                                     </div>
                                 ))}
-                                {!(calculationData.sourceTfidf?.genres || calculationData.userTfidf?.genres || calculationData.targetTfidf?.genres)?.length && (
+                                {!(calculationData.sourceTfidf?.genres || calculationData.userTfidf?.genres)?.length && (
                                     <div className="p-2 text-muted-foreground text-xs">No genre IDF data</div>
                                 )}
                                 </div>
@@ -494,7 +493,7 @@ async function CalculationPage(props: CalculationPageProps) {
                             <div>
                                 <h6 className="font-medium mb-2 text-sm">Tag IDF</h6>
                                 <div className="space-y-2 overflow-y-auto">
-                                {(calculationData.sourceTfidf?.tags || calculationData.userTfidf?.tags || calculationData.targetTfidf?.tags)?.map((item: any) => (
+                                {(calculationData.sourceTfidf?.tags || calculationData.userTfidf?.tags)?.map((item: any) => (
                                     <div key={item.term} className="flex justify-between items-center p-2 bg-blue-50 rounded">
                                     <span className="font-medium text-xs">{item.term}</span>
                                     <div className="text-right">
@@ -506,26 +505,56 @@ async function CalculationPage(props: CalculationPageProps) {
                                     </div>
                                     </div>
                                 ))}
-                                {!(calculationData.sourceTfidf?.tags || calculationData.userTfidf?.tags || calculationData.targetTfidf?.tags)?.length && (
+                                {!(calculationData.sourceTfidf?.tags || calculationData.userTfidf?.tags)?.length && (
                                     <div className="p-2 text-muted-foreground text-xs">No tag IDF data</div>
                                 )}
                                 </div>
                             </div>
                         </div>
                     </div>
-                    {/* Placeholder for second column if needed, or adjust grid-cols-1 if IDF is displayed once */}
-                     <div>
-                        {/* This space can be used if you decide to show IDF scores for target separately or other info */}
-                        {/* For now, keeping it structurally similar to TF scores section */}
-                        <h5 className="font-medium mb-2 text-center text-transparent">Hidden Spacer</h5> {/* Transparent text for spacing */}
-                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-                            <div className="invisible">
+                    {/* Target IDF Scores */}
+                    <div>
+                        <h5 className="font-medium mb-2 text-center">{manhwa.title + " IDF Scores"}</h5>
+                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                            <div>
                                 <h6 className="font-medium mb-2 text-sm">Genre IDF</h6>
-                                <div className="p-2 text-muted-foreground text-xs">N/A</div>
+                                <div className="space-y-2 overflow-y-auto">
+                                {safeArray(calculationData.targetTfidf?.genres).map((item: any) => (
+                                    <div key={item.term} className="flex justify-between items-center p-2 bg-blue-50 rounded">
+                                    <span className="font-medium text-xs">{item.term}</span>
+                                    <div className="text-right">
+                                        <div className="text-xs text-muted-foreground">
+                                        {/* Show calculation: log(total docs / docs with term) */}
+                                        log({allManhwaData.length} / {Math.max(1, Math.round(allManhwaData.length / Math.exp(item.idf)))})
+                                        </div>
+                                        <div className="font-mono font-semibold text-xs">{(item.idf || 0).toFixed(4)}</div>
+                                    </div>
+                                    </div>
+                                ))}
+                                {!safeArray(calculationData.targetTfidf?.genres).length && (
+                                    <div className="p-2 text-muted-foreground text-xs">No genre IDF data</div>
+                                )}
+                                </div>
                             </div>
-                            <div className="invisible">
+                            <div>
                                 <h6 className="font-medium mb-2 text-sm">Tag IDF</h6>
-                                <div className="p-2 text-muted-foreground text-xs">N/A</div>
+                                <div className="space-y-2 overflow-y-auto">
+                                {safeArray(calculationData.targetTfidf?.tags).map((item: any) => (
+                                    <div key={item.term} className="flex justify-between items-center p-2 bg-blue-50 rounded">
+                                    <span className="font-medium text-xs">{item.term}</span>
+                                    <div className="text-right">
+                                        <div className="text-xs text-muted-foreground">
+                                        {/* Show calculation: log(total docs / docs with term) */}
+                                        log({allManhwaData.length} / {Math.max(1, Math.round(allManhwaData.length / Math.exp(item.idf)))})
+                                        </div>
+                                        <div className="font-mono font-semibold text-xs">{(item.idf || 0).toFixed(4)}</div>
+                                    </div>
+                                    </div>
+                                ))}
+                                {!safeArray(calculationData.targetTfidf?.tags).length && (
+                                    <div className="p-2 text-muted-foreground text-xs">No tag IDF data</div>
+                                )}
+                                </div>
                             </div>
                         </div>
                     </div>
