@@ -7,7 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Badge } from "@/components/ui/badge"
-import { ArrowLeft, TrendingUp, Calculator, Filter } from "lucide-react"
+import { ArrowLeft, TrendingUp, Calculator, Filter, ExternalLink } from "lucide-react"
 import Link from "next/link"
 import { notFound } from "next/navigation"
 
@@ -398,6 +398,16 @@ export default async function AllCalculationsPage({ params, searchParams }: AllC
                     <Badge variant="outline" className="text-xs">
                       {result.manhwa.releaseYear}
                     </Badge>
+                    <Link 
+                      href={`/manhwa/${result.manhwa.id}/calculation?targetManhwaId=${awaitedParams.id}`}
+                      className="ml-auto"
+                    >
+                      <Button variant="outline" size="sm" className="flex items-center gap-1">
+                        <Calculator className="h-3 w-3" />
+                        <span>View Detailed Calculation</span>
+                        <ExternalLink className="h-3 w-3 ml-1" />
+                      </Button>
+                    </Link>
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
@@ -520,32 +530,11 @@ export default async function AllCalculationsPage({ params, searchParams }: AllC
                             }
                           </div>
                         </div>
-                        <div className="p-3 bg-muted rounded">
-                          <div className="text-sm text-muted-foreground">Total Dimensions</div>
-                          <div className="font-semibold">
-                            {
-                              (() => {
-                                const sourceVector: number[] | undefined = result.calculation.vectors?.source;
-                                // Fallback to an empty array if sourceVector is undefined before passing to safeArray
-                                const safeSourceVector: number[] = safeArray<number>(sourceVector || []); 
-                                return safeSourceVector.length;
-                              })()
-                            }
-                          </div>
-                        </div>
+
                       </div>
                     </div>
                   </div>
 
-                  {/* Quick Action */}
-                  <div className="mt-4 pt-4 border-t">
-                    <Link href={`/manhwa/${result.manhwa.id}/calculation?source=${sourceManhwa.id}`}>
-                      <Button variant="outline" size="sm">
-                        <Calculator className="h-4 w-4 mr-2" />
-                        View Detailed Calculation
-                      </Button>
-                    </Link>
-                  </div>
                 </CardContent>
               </Card>
             ))}

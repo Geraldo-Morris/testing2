@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Input } from "@/components/ui/input"
-import { Sparkles, Search } from "lucide-react"
+import { Sparkles, Search, Calculator } from "lucide-react"
 import { getRecommendationsByPreferences } from "@/lib/recommendation-engine"
 import { ManhwaCard } from "@/components/manhwa-card"
 import type { Manhwa } from "@/lib/types"
@@ -62,10 +62,35 @@ export function GenreBasedRecommendations() {
 
     setIsLoading(true)
 
+    // Import the calculateTFIDF function dynamically to avoid SSR issues
+    const { calculateTFIDF } = await import('@/lib/similarity-calculator')
+
     // Simulate loading delay for better UX
-    setTimeout(() => {
-      const results = getRecommendationsByPreferences(selectedGenres, selectedTags)
-      setRecommendations(results)
+    setTimeout(async () => {
+      // Get more recommendations initially to find the best matches after TF-IDF calculation
+      const initialResults = getRecommendationsByPreferences(selectedGenres, selectedTags, 20)
+      
+      // Calculate detailed similarity for each recommendation
+      const calculationPromises = initialResults.map(manhwa => 
+        calculateTFIDF(manhwa, selectedGenres, selectedTags)
+      )
+      
+      const calculations = await Promise.all(calculationPromises)
+      
+      // Combine manhwa with their calculations
+      const resultsWithCalculations = initialResults.map((manhwa, index) => ({
+        manhwa,
+        calculation: calculations[index]
+      }))
+      
+      // Filter valid results, sort by cosine similarity, and take top 5
+      const sortedResults = resultsWithCalculations
+        .filter(result => result && result.calculation && typeof result.calculation.cosine?.similarity === 'number')
+        .sort((a, b) => (b.calculation.cosine.similarity || 0) - (a.calculation.cosine.similarity || 0))
+        .slice(0, 5)
+        .map(result => result.manhwa)
+      
+      setRecommendations(sortedResults)
       setIsLoading(false)
     }, 500)
   }
@@ -200,12 +225,34 @@ export function GenreBasedRecommendations() {
       {/* Recommendations Results */}
       {recommendations.length > 0 && (
         <div>
-          <h3 className="text-2xl font-bold mb-4">Recommended for You</h3>
-          <p className="text-muted-foreground mb-6">
-            Based on your selected preferences, here are manhwa titles you might enjoy:
-          </p>
+          <div className="flex items-center justify-between mb-4">
+            <div>
+              <h3 className="text-2xl font-bold mb-2">Recommended for You</h3>
+              <p className="text-muted-foreground">
+                Based on the genres, tags, and style of your preferences
+              </p>
+            </div>
+            <Button 
+              className="flex items-center gap-2"
+              onClick={() => {
+                // Create URL parameters for user preferences
+                const params = new URLSearchParams();
+                if (selectedGenres.length > 0) {
+                  params.append('userGenres', selectedGenres.join(','));
+                }
+                if (selectedTags.length > 0) {
+                  params.append('userTags', selectedTags.join(','));
+                }
+                // Navigate to the all-calculations page with the user's preferences
+                window.location.href = `/preferences/calculations?${params.toString()}`;
+              }}
+            >
+              <Calculator className="h-4 w-4" />
+              View All Calculations
+            </Button>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
-            {recommendations.map((manhwa) => (
+            {recommendations.slice(0, 5).map((manhwa) => (
               <ManhwaCard key={manhwa.id} manhwa={manhwa} />
             ))}
           </div>

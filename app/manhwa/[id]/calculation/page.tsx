@@ -267,7 +267,7 @@ async function CalculationPage(props: CalculationPageProps) {
                     <div>
                       <h5 className="font-medium text-sm mb-2">Genres:</h5>
                       <div className="flex flex-wrap gap-1">
-                        {(sourceManhwa?.genres || safeArray(calculationData.tfidf.genres).map((g: any) => g.term)).map(
+                        {(sourceManhwa?.genres || userGenres || safeArray((calculationData.tfidf?.genres || calculationData.userTfidf?.genres || []).map((g: any) => g.term))).map(
                           (genre: string) => (
                             <span key={genre} className="px-2 py-1 bg-primary/10 text-primary rounded text-xs">
                               {genre}
@@ -281,7 +281,8 @@ async function CalculationPage(props: CalculationPageProps) {
                       <div className="flex flex-wrap gap-1 max-h-24 overflow-y-auto">
                         {(
                           sourceManhwa?.tags ||
-                          safeArray(calculationData.tfidf.tags || calculationData.tfidf.themes).map((t: any) => t.term)
+                          userTags ||
+                          safeArray((calculationData.tfidf?.tags || calculationData.userTfidf?.tags || []).map((t: any) => t.term))
                         ).map((tag: string) => (
                           <span key={tag} className="px-2 py-1 bg-primary/10 text-primary rounded text-xs">
                             {tag}
@@ -376,7 +377,7 @@ async function CalculationPage(props: CalculationPageProps) {
                                 <div className="text-right">
                                     <div className="text-xs text-muted-foreground">
                                     {/* Show calculation: count / total terms */}
-                                    {Math.round(item.tf * ((sourceManhwa?.genres.length || userGenres.length || 1) + (sourceManhwa?.tags.length || userTags.length || 0)))} / {(sourceManhwa?.genres.length || userGenres.length || 1) + (sourceManhwa?.tags.length || userTags.length || 0)}
+                                    {Math.round(item.tf * ((sourceManhwa ? safeArray(sourceManhwa.genres).length : userGenres.length || 1) + (sourceManhwa ? safeArray(sourceManhwa.tags).length : userTags.length || 0)))} / {(sourceManhwa ? safeArray(sourceManhwa.genres).length : userGenres.length || 1) + (sourceManhwa ? safeArray(sourceManhwa.tags).length : userTags.length || 0)}
                                     </div>
                                     <div className="font-mono font-semibold text-xs">{(item.tf || 0).toFixed(4)}</div>
                                 </div>
@@ -396,7 +397,7 @@ async function CalculationPage(props: CalculationPageProps) {
                                 <div className="text-right">
                                     <div className="text-xs text-muted-foreground">
                                     {/* Show calculation: count / total terms */}
-                                    {Math.round(item.tf * ((sourceManhwa?.genres.length || userGenres.length || 0) + (sourceManhwa?.tags.length || userTags.length || 1)))} / {(sourceManhwa?.genres.length || userGenres.length || 0) + (sourceManhwa?.tags.length || userTags.length || 1)}
+                                    {Math.round(item.tf * ((sourceManhwa ? safeArray(sourceManhwa.genres).length : userGenres.length || 0) + (sourceManhwa ? safeArray(sourceManhwa.tags).length : userTags.length || 1)))} / {(sourceManhwa ? safeArray(sourceManhwa.genres).length : userGenres.length || 0) + (sourceManhwa ? safeArray(sourceManhwa.tags).length : userTags.length || 1)}
                                     </div>
                                     <div className="font-mono font-semibold text-xs">{(item.tf || 0).toFixed(4)}</div>
                                 </div>
@@ -423,7 +424,7 @@ async function CalculationPage(props: CalculationPageProps) {
                                 <div className="text-right">
                                     <div className="text-xs text-muted-foreground">
                                     {/* Show calculation: count / total terms */}
-                                    {Math.round(item.tf * (manhwa.genres.length + manhwa.tags.length))} / {manhwa.genres.length + manhwa.tags.length}
+                                    {Math.round(item.tf * (safeArray(manhwa.genres).length + safeArray(manhwa.tags).length))} / {safeArray(manhwa.genres).length + safeArray(manhwa.tags).length}
                                     </div>
                                     <div className="font-mono font-semibold text-xs">{(item.tf || 0).toFixed(4)}</div>
                                 </div>
@@ -443,7 +444,7 @@ async function CalculationPage(props: CalculationPageProps) {
                                 <div className="text-right">
                                     <div className="text-xs text-muted-foreground">
                                     {/* Show calculation: count / total terms */}
-                                    {Math.round(item.tf * (manhwa.genres.length + manhwa.tags.length))} / {manhwa.genres.length + manhwa.tags.length}
+                                    {Math.round(item.tf * (safeArray(manhwa.genres).length + safeArray(manhwa.tags).length))} / {safeArray(manhwa.genres).length + safeArray(manhwa.tags).length}
                                     </div>
                                     <div className="font-mono font-semibold text-xs">{(item.tf || 0).toFixed(4)}</div>
                                 </div>
