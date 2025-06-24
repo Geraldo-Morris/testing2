@@ -26,29 +26,16 @@ function calculateSimilarity(manhwa1: Manhwa, manhwa2: Manhwa): number {
 
   // Genre similarity (highest weight)
   const genreSimilarity = calculateJaccardSimilarity(manhwa1.genres, manhwa2.genres)
-  score += genreSimilarity * 0.4
+  score += genreSimilarity * 0.6
 
-  // Theme similarity -> Tag similarity
+  // Tag similarity
   const tagSimilarity = calculateJaccardSimilarity(manhwa1.tags, manhwa2.tags)
   score += tagSimilarity * 0.3
-
-  // Art style similarity
-  const artStyleSimilarity = manhwa1.artStyle === manhwa2.artStyle ? 1 : 0
-  score += artStyleSimilarity * 0.1
-
-  // Status similarity
-  const statusSimilarity = manhwa1.status === manhwa2.status ? 1 : 0
-  score += statusSimilarity * 0.05
 
   // Release year proximity (normalized)
   const yearDifference = Math.abs(manhwa1.releaseYear - manhwa2.releaseYear)
   const yearSimilarity = 1 - Math.min(yearDifference / 10, 1) // Max difference considered is 10 years
-  score += yearSimilarity * 0.05
-
-  // Rating similarity (normalized)
-  const ratingDifference = Math.abs(manhwa1.rating - manhwa2.rating)
-  const ratingSimilarity = 1 - ratingDifference / 10 // Ratings are on a 10-point scale
-  score += ratingSimilarity * 0.1
+  score += yearSimilarity * 0.1
 
   return score
 }
@@ -85,9 +72,7 @@ export function getRecommendationsByPreferences(
     const tagScore = preferredTags.length > 0 ? tagMatches / preferredTags.length : 0
     score += tagScore * 0.4 // 40% weight for tags
 
-    // Bonus for high ratings and popularity
-    const qualityBonus = (manhwa.rating / 10) * 0.1 + (manhwa.popularity / 100) * 0.1
-    score += qualityBonus
+   
 
     return { manhwa, score }
   })

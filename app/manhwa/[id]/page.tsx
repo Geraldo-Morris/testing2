@@ -80,6 +80,32 @@ export default function ManhwaPage({ params }: ManhwaPageProps) {
 
         <div className="flex-1">
           <h1 className="text-3xl font-bold mb-2">{manhwa.title}</h1>
+          
+          {/* Additional title information */}
+          <div className="mb-4">
+            {manhwa.title_english && (
+              <p className="text-lg text-muted-foreground">
+                <span className="font-medium">English:</span> {manhwa.title_english}
+              </p>
+            )}
+            {manhwa.title_native && (
+              <p className="text-lg text-muted-foreground">
+                <span className="font-medium">Native:</span> {manhwa.title_native}
+              </p>
+            )}
+            {manhwa.title_synonyms && manhwa.title_synonyms.length > 0 && (
+              <div className="mt-1">
+                <span className="font-medium text-muted-foreground">Also known as:</span>
+                <div className="flex flex-wrap gap-1 mt-1">
+                  {manhwa.title_synonyms.map((synonym, index) => (
+                    <span key={index} className="px-2 py-1 bg-secondary/50 text-secondary-foreground rounded-md text-sm">
+                      {synonym}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
 
           <div className="flex flex-wrap gap-2 mb-6">
             {manhwa.genres.map((genre) => (

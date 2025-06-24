@@ -49,20 +49,8 @@ export function calculateDetailedSimilarity(sourceManhwa: Manhwa, targetManhwa: 
 
   // Additional factors
   const additionalFactors = {
-    artStyle: {
-      score: sourceManhwa.artStyle === targetManhwa.artStyle ? 1 : 0,
-      weight: 0.1,
-    },
-    status: {
-      score: sourceManhwa.status === targetManhwa.status ? 1 : 0,
-      weight: 0.05,
-    },
     yearSimilarity: {
       score: 1 - Math.min(Math.abs(sourceManhwa.releaseYear - targetManhwa.releaseYear) / 10, 1),
-      weight: 0.05,
-    },
-    ratingSimilarity: {
-      score: 1 - Math.abs(sourceManhwa.rating - targetManhwa.rating) / 10,
       weight: 0.1,
     },
   }

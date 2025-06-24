@@ -40,21 +40,24 @@ async function loadCSVData(): Promise<Manhwa[]> {
           rowData[header] = (values[index] || "").replace(/"/g, "").trim()
         })
 
+        // Parse title_synonyms as an array
+        const titleSynonyms = rowData["title_synonyms"] ? 
+          rowData["title_synonyms"].split(",").map(s => s.trim()).filter(Boolean) : 
+          [];
+
         // Map to our Manhwa interface with flexible column mapping
         const manhwa: Manhwa = {
           id: rowData["id"] || i.toString(),
           title: rowData["title_romaji"] || rowData["title_english"] || rowData["title_native"] || "Unknown Title",
+          title_english: rowData["title_english"] || "",
+          title_native: rowData["title_native"] || "",
+          title_synonyms: titleSynonyms,
           author: "Unknown Author", // Not provided in current CSV
           description: rowData["description"] || "No description available.",
           genres: (rowData["genres"] || "").split(",").map(g => g.trim()).filter(Boolean),
           tags: (rowData["tags"] || "").split(",").map(t => t.trim()).filter(Boolean),
-          artStyle: "Unknown",
-          status: "Unknown",
           releaseYear: parseInt(rowData["start_year"]) || new Date().getFullYear(),
-          rating: 0,
-          popularity: 0,
-          coverImage: rowData["cover_image_url"] || "/placeholder.jpg",
-          chapters: 0
+          coverImage: rowData["cover_image_url"] || "/placeholder.jpg"
         }
 
         // Validate required fields
@@ -128,194 +131,170 @@ function getSampleData(): Manhwa[] {
     {
       id: "1",
       title: "Solo Leveling",
+      title_english: "Solo Leveling",
+      title_native: "나 혼자만 레벨업",
+      title_synonyms: ["I Level Up Alone", "Only I Level Up"],
       author: "Chugong",
       description:
-        "In a world where hunters must battle deadly monsters to protect humanity, Sung Jin-Woo, the weakest of hunters, finds himself in a situation that changes his life forever.",
+        "10 years ago, after 'the Gate' that connected the real world with the monster world opened, some of the ordinary, everyday people received the power to hunt monsters within the Gate. They are known as 'Hunters'. However, not all Hunters are powerful. My name is Sung Jin-Woo, an E-rank Hunter. I'm someone who has to risk his life in the lowliest of dungeons, the 'World's Weakest'. Having no skills whatsoever to display, I barely earned the required money by fighting in low-level dungeons… at least until I found a hidden dungeon with the hardest difficulty within the D-rank dungeons! In the end, as I was accepting death, I suddenly received a strange power, a quest log that only I could see, a secret to leveling up that only I know about! If I trained in accordance with my quests and hunted monsters, my level would rise. Changing from the weakest Hunter to the strongest S-rank Hunter!",
       genres: ["Action", "Adventure", "Fantasy"],
-      tags: ["Level up", "Dungeons", "Monster battles"],
-      artStyle: "Detailed, Dynamic",
-      status: "Completed",
+      tags: ["Male Protagonist", "Dungeons", "Monsters", "System"],
       releaseYear: 2018,
-      rating: 9.2,
-      popularity: 98,
-      coverImage: "/placeholder.svg?height=450&width=300",
-      chapters: 179,
+      coverImage: "https://example.com/solo-leveling.jpg",
     },
     {
       id: "2",
       title: "Tower of God",
+      title_english: "Tower of God",
+      title_native: "신의 탑",
+      title_synonyms: ["Sinui Tap", "Tower of God"],
       author: "SIU",
       description:
         "The story of a boy who enters a mysterious tower, climbing it to find the girl who entered it before him.",
       genres: ["Action", "Adventure", "Fantasy", "Mystery"],
       tags: ["Tower climbing", "Tests", "Betrayal"],
-      artStyle: "Unique, Colorful",
-      status: "Ongoing",
       releaseYear: 2010,
-      rating: 8.9,
-      popularity: 95,
       coverImage: "/placeholder.svg?height=450&width=300",
-      chapters: 550,
     },
     {
       id: "3",
       title: "The God of High School",
+      title_english: "The God of High School",
+      title_native: "갓 오브 하이스쿨",
+      title_synonyms: ["GOH", "God of High School"],
       author: "Yongje Park",
       description:
         "A high school student and his friends compete in an epic tournament borrowing power from the gods and uncovering a mysterious organization.",
       genres: ["Action", "Martial Arts", "Supernatural"],
       tags: ["Tournament", "Gods", "Friendship"],
-      artStyle: "Clean, Action-focused",
-      status: "Ongoing",
       releaseYear: 2011,
-      rating: 8.5,
-      popularity: 90,
       coverImage: "/placeholder.svg?height=450&width=300",
-      chapters: 500,
     },
     {
       id: "4",
       title: "Noblesse",
+      title_english: "Noblesse",
+      title_native: "노블레스",
+      title_synonyms: [],
       author: "Son Jeho",
       description:
         "After 820 years of slumber, Cadis Etrama Di Raizel awakens in modern-day South Korea, starting a new life as a high school student.",
       genres: ["Action", "Supernatural", "Comedy", "School Life"],
       tags: ["Vampires", "Nobility", "Friendship"],
-      artStyle: "Elegant, Detailed",
-      status: "Completed",
       releaseYear: 2007,
-      rating: 8.7,
-      popularity: 88,
       coverImage: "/placeholder.svg?height=450&width=300",
-      chapters: 544,
     },
     {
       id: "5",
       title: "The Breaker",
+      title_english: "The Breaker",
+      title_native: "브레이커",
+      title_synonyms: [],
       author: "Jeon Geuk-Jin",
       description:
         "A martial arts manhwa about a weak high school student who meets a mysterious martial arts teacher.",
       genres: ["Action", "Martial Arts", "School Life"],
       tags: ["Training", "Secret organizations", "Revenge"],
-      artStyle: "Realistic, Detailed action",
-      status: "Completed",
       releaseYear: 2007,
-      rating: 8.8,
-      popularity: 85,
       coverImage: "/placeholder.svg?height=450&width=300",
-      chapters: 72,
     },
     {
       id: "6",
       title: "Sweet Home",
+      title_english: "Sweet Home",
+      title_native: "스위트홈",
+      title_synonyms: [],
       author: "Kim Carnby",
       description:
         "After losing his family, a reclusive high school student is forced to leave his home when a monster apocalypse threatens to destroy humanity.",
       genres: ["Horror", "Thriller", "Supernatural"],
       tags: ["Monsters", "Survival", "Humanity"],
-      artStyle: "Gritty, Detailed",
-      status: "Completed",
       releaseYear: 2017,
-      rating: 8.6,
-      popularity: 87,
       coverImage: "/placeholder.svg?height=450&width=300",
-      chapters: 141,
     },
     {
       id: "7",
       title: "Omniscient Reader's Viewpoint",
+      title_english: "Omniscient Reader's Viewpoint",
+      title_native: "전지적 독자 시점",
+      title_synonyms: ["ORV", "Omniscient Reader"],
       author: "Sing Shong",
       description:
         "A novel reader becomes the sole person who knows how the world will end and struggles to change the course of the story.",
       genres: ["Action", "Adventure", "Fantasy"],
       tags: ["Apocalypse", "Novel world", "Survival game"],
-      artStyle: "Detailed, Expressive",
-      status: "Ongoing",
       releaseYear: 2020,
-      rating: 9.0,
-      popularity: 92,
       coverImage: "/placeholder.svg?height=450&width=300",
-      chapters: 100,
     },
     {
       id: "8",
       title: "Bastard",
+      title_english: "Bastard",
+      title_native: "바스타드",
+      title_synonyms: [],
       author: "Kim Carnby",
       description:
         "A boy tries to hide the fact that his father is a serial killer while attempting to rescue people from becoming his father's next victims.",
       genres: ["Thriller", "Horror", "Psychological"],
       tags: ["Serial killers", "Family", "Trauma"],
-      artStyle: "Realistic, Expressive",
-      status: "Completed",
       releaseYear: 2014,
-      rating: 8.9,
-      popularity: 84,
       coverImage: "/placeholder.svg?height=450&width=300",
-      chapters: 94,
     },
     {
       id: "9",
       title: "Lookism",
+      title_english: "Lookism",
+      title_native: "외모지상주의",
+      title_synonyms: ["Oemojisonjuui"],
       author: "Park Tae-jun",
       description:
         "A high school student who is bullied for his appearance wakes up with two bodies that he can switch between at will.",
       genres: ["Drama", "School Life", "Comedy"],
       tags: ["Appearance", "Bullying", "Social hierarchy"],
-      artStyle: "Detailed, Realistic",
-      status: "Ongoing",
       releaseYear: 2014,
-      rating: 8.4,
-      popularity: 83,
       coverImage: "/placeholder.svg?height=450&width=300",
-      chapters: 400,
     },
     {
       id: "10",
       title: "The Beginning After the End",
+      title_english: "The Beginning After the End",
+      title_native: "",
+      title_synonyms: ["TBATE"],
       author: "TurtleMe",
       description:
         "A king in his previous life is reborn into a world of magic and monsters, determined to live his new life to the fullest.",
       genres: ["Action", "Adventure", "Fantasy"],
       tags: ["Reincarnation", "Magic", "Coming of age"],
-      artStyle: "Colorful, Detailed",
-      status: "Ongoing",
       releaseYear: 2018,
-      rating: 8.8,
-      popularity: 91,
       coverImage: "/placeholder.svg?height=450&width=300",
-      chapters: 150,
     },
     {
       id: "11",
       title: "Eleceed",
+      title_english: "Eleceed",
+      title_native: "일렉시드",
+      title_synonyms: [],
       author: "Son Jeho",
       description:
         "A story about Jiwoo, a kind-hearted young man with a secret power to move at supernatural speeds, and a mysterious cat named Kayden.",
       genres: ["Action", "Comedy", "Supernatural"],
       tags: ["Secret powers", "Cats", "Training"],
-      artStyle: "Clean, Expressive",
-      status: "Ongoing",
       releaseYear: 2018,
-      rating: 9.1,
-      popularity: 89,
       coverImage: "/placeholder.svg?height=450&width=300",
-      chapters: 200,
     },
     {
       id: "12",
       title: "Hardcore Leveling Warrior",
+      title_english: "Hardcore Leveling Warrior",
+      title_native: "하드코어 레벨링 전사",
+      title_synonyms: ["HLW", "Hardcorereberingjeonsayi"],
       author: "Sehoon Kim",
       description:
         "The story of the former number one ranked player in the game Lucid Adventure who loses all his powers and items and must start from scratch.",
       genres: ["Action", "Adventure", "Fantasy", "Game"],
       tags: ["Virtual reality", "Level up", "Revenge"],
-      artStyle: "Colorful, Game-like",
-      status: "Completed",
       releaseYear: 2016,
-      rating: 8.6,
-      popularity: 86,
       coverImage: "/placeholder.svg?height=450&width=300",
-      chapters: 300,
     },
   ]
 }
@@ -333,7 +312,13 @@ function getSampleData(): Manhwa[] {
 export async function getManhwaByTitle(title: string): Promise<Manhwa[]> {
   const data = await loadCSVData()
   const searchTerm = title.toLowerCase()
-  return data.filter((manhwa) => manhwa.title.toLowerCase().includes(searchTerm))
+  return data.filter((manhwa) => {
+    // Search across all title fields
+    return manhwa.title.toLowerCase().includes(searchTerm) || 
+           (manhwa.title_english && manhwa.title_english.toLowerCase().includes(searchTerm)) || 
+           (manhwa.title_native && manhwa.title_native.toLowerCase().includes(searchTerm)) || 
+           manhwa.title_synonyms.some(synonym => synonym.toLowerCase().includes(searchTerm))
+  })
 }
 
 // Synchronous versions for backward compatibility (will use cached data)
@@ -387,5 +372,11 @@ export async function getAllManhwa(): Promise<Manhwa[]> {
 
 export function getManhwaByTitleSync(title: string): Manhwa[] {
   const searchTerm = title.toLowerCase()
-  return manhwaData.filter((manhwa) => manhwa.title.toLowerCase().includes(searchTerm))
+  return manhwaData.filter((manhwa) => {
+    // Search across all title fields
+    return manhwa.title.toLowerCase().includes(searchTerm) || 
+           (manhwa.title_english && manhwa.title_english.toLowerCase().includes(searchTerm)) || 
+           (manhwa.title_native && manhwa.title_native.toLowerCase().includes(searchTerm)) || 
+           manhwa.title_synonyms.some(synonym => synonym.toLowerCase().includes(searchTerm))
+  })
 }

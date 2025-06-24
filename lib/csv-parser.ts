@@ -2,17 +2,15 @@
 export interface CSVManhwa {
   id: string
   title: string
+  title_english: string
+  title_native: string
+  title_synonyms: string[]
   author: string
   description: string
   genres: string[]
   tags: string[]
-  artStyle: string
-  status: string
   releaseYear: number
-  rating: number
-  popularity: number
   coverImage: string
-  chapters: number
 }
 
 export function parseCSVLine(line: string): string[] {
@@ -37,72 +35,37 @@ export function parseCSVLine(line: string): string[] {
   return result
 }
 
-export function parseCSVToManhwa(csvText: string): CSVManhwa[] {
-  const lines = csvText.split("\n").filter((line) => line.trim())
-  if (lines.length === 0) return []
-
-  const headers = parseCSVLine(lines[0]).map((h) => h.replace(/"/g, "").trim())
-  const manhwaList: CSVManhwa[] = []
-
-  console.log("CSV Headers:", headers)
-
-  for (let i = 1; i < lines.length; i++) {
-    try {
-      const values = parseCSVLine(lines[i])
-
-      // Create a mapping object
-      const rowData: { [key: string]: string } = {}
-      headers.forEach((header, index) => {
-        rowData[header] = values[index] || ""
-      })
-
-      // Map CSV columns to our interface
-      // We'll need to adjust these based on the actual CSV structure
-      const manhwa: CSVManhwa = {
-        id: rowData["id"] || rowData["ID"] || i.toString(),
-        title: rowData["title"] || rowData["Title"] || rowData["name"] || rowData["Name"] || "Unknown Title",
-        author: rowData["author"] || rowData["Author"] || rowData["creator"] || rowData["Creator"] || "Unknown Author",
-        description:
-          rowData["description"] ||
-          rowData["Description"] ||
-          rowData["summary"] ||
-          rowData["Summary"] ||
-          "No description available",
-        genres: parseArrayField(rowData["genres"] || rowData["Genres"] || rowData["genre"] || rowData["Genre"] || ""),
-        tags: parseArrayField(rowData["tags"] || rowData["Tags"] || rowData["themes"] || rowData["Themes"] || ""),
-        artStyle: rowData["artStyle"] || rowData["ArtStyle"] || rowData["art_style"] || rowData["style"] || "Unknown",
-        status: rowData["status"] || rowData["Status"] || rowData["publication_status"] || "Unknown",
-        releaseYear: Number.parseInt(
-          rowData["releaseYear"] ||
-            rowData["ReleaseYear"] ||
-            rowData["release_year"] ||
-            rowData["year"] ||
-            rowData["Year"] ||
-            "2020",
-        ),
-        rating: Number.parseFloat(
-          rowData["rating"] || rowData["Rating"] || rowData["score"] || rowData["Score"] || "0",
-        ),
-        popularity: Number.parseFloat(
-          rowData["popularity"] || rowData["Popularity"] || rowData["views"] || rowData["Views"] || "0",
-        ),
-        coverImage:
-          rowData["coverImage"] ||
-          rowData["CoverImage"] ||
-          rowData["cover_image"] ||
-          rowData["image"] ||
-          "/placeholder.svg?height=450&width=300",
-        chapters: Number.parseInt(rowData["chapters"] || rowData["Chapters"] || rowData["chapter_count"] || "0"),
-      }
-
-      manhwaList.push(manhwa)
-    } catch (error) {
-      console.error(`Error parsing row ${i}:`, error)
-    }
+export function parseCSVToManhwa(rowData: Record<string, string>): CSVManhwa {
+  // Handle potential missing or differently named fields
+  return {
+    id: rowData["id"] || rowData["ID"] || rowData["manhwa_id"] || "",
+    title: rowData["title"] || rowData["Title"] || rowData["name"] || rowData["Name"] || "",
+    title_english: rowData["title_english"] || rowData["Title_English"] || rowData["english_title"] || "",
+    title_native: rowData["title_native"] || rowData["Title_Native"] || rowData["native_title"] || "",
+    title_synonyms: parseArrayField(
+      rowData["title_synonyms"] || rowData["Title_Synonyms"] || rowData["synonyms"] || rowData["alternative_titles"] || "",
+    ),
+    author: rowData["author"] || rowData["Author"] || rowData["creator"] || rowData["artist"] || "",
+    description: rowData["description"] || rowData["Description"] || rowData["synopsis"] || rowData["summary"] || "",
+    genres: parseArrayField(rowData["genres"] || rowData["Genres"] || rowData["genre"] || rowData["Genre"] || ""),
+    tags: parseArrayField(rowData["tags"] || rowData["Tags"] || rowData["themes"] || rowData["Themes"] || ""),
+    releaseYear: Number.parseInt(
+      rowData["releaseYear"] ||
+        rowData["ReleaseYear"] ||
+        rowData["release_year"] ||
+        rowData["year"] ||
+        rowData["Year"] ||
+        "0",
+    ),
+    coverImage:
+      rowData["coverImage"] ||
+      rowData["CoverImage"] ||
+      rowData["cover"] ||
+      rowData["Cover"] ||
+      rowData["image"] ||
+      rowData["Image"] ||
+      "",
   }
-
-  console.log(`Successfully parsed ${manhwaList.length} manhwa entries`)
-  return manhwaList
 }
 
 function parseArrayField(field: string): string[] {
