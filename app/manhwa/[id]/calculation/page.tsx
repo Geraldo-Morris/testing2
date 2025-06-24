@@ -265,7 +265,7 @@ async function CalculationPage(props: CalculationPageProps) {
                   <h4 className="font-semibold mb-3">{sourceManhwa?.title || "User Preferences"} Features</h4>
                   <div className="space-y-3">
                     <div>
-                      <h5 className="font-medium text-sm mb-2">Genres:</h5>
+                      <h5 className="font-medium text-sm mb-2">Genres (Before Pre-processing):</h5>
                       <div className="flex flex-wrap gap-1">
                         {(sourceManhwa?.genres || userGenres || safeArray((calculationData.tfidf?.genres || calculationData.userTfidf?.genres || []).map((g: any) => g.term))).map(
                           (genre: string) => (
@@ -277,7 +277,19 @@ async function CalculationPage(props: CalculationPageProps) {
                       </div>
                     </div>
                     <div>
-                      <h5 className="font-medium text-sm mb-2">Tags:</h5>
+                      <h5 className="font-medium text-sm mb-2">Genres (After Pre-processing):</h5>
+                      <div className="flex flex-wrap gap-1">
+                        {(sourceManhwa?.genres || userGenres || safeArray((calculationData.tfidf?.genres || calculationData.userTfidf?.genres || []).map((g: any) => g.term))).map(
+                          (genre: string) => (
+                            <span key={genre} className="px-2 py-1 bg-blue-100 text-blue-700 rounded text-xs">
+                              {genre.toLowerCase().replace(/[^a-z0-9\s]/g, '').replace(/\s+/g, '_')}
+                            </span>
+                          ),
+                        )}
+                      </div>
+                    </div>
+                    <div>
+                      <h5 className="font-medium text-sm mb-2">Tags (Before Pre-processing):</h5>
                       <div className="flex flex-wrap gap-1 max-h-24 overflow-y-auto">
                         {(
                           sourceManhwa?.tags ||
@@ -290,6 +302,20 @@ async function CalculationPage(props: CalculationPageProps) {
                         ))}
                       </div>
                     </div>
+                    <div>
+                      <h5 className="font-medium text-sm mb-2">Tags (After Pre-processing):</h5>
+                      <div className="flex flex-wrap gap-1 max-h-24 overflow-y-auto">
+                        {(
+                          sourceManhwa?.tags ||
+                          userTags ||
+                          safeArray((calculationData.tfidf?.tags || calculationData.userTfidf?.tags || []).map((t: any) => t.term))
+                        ).map((tag: string) => (
+                          <span key={tag} className="px-2 py-1 bg-blue-100 text-blue-700 rounded text-xs">
+                            {tag.toLowerCase().replace(/[^a-z0-9\s]/g, '').replace(/\s+/g, '_')}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
                   </div>
                 </div>
 
@@ -297,7 +323,7 @@ async function CalculationPage(props: CalculationPageProps) {
                   <h4 className="font-semibold mb-3">{manhwa.title} Features</h4>
                   <div className="space-y-3">
                     <div>
-                      <h5 className="font-medium text-sm mb-2">Genres:</h5>
+                      <h5 className="font-medium text-sm mb-2">Genres (Before Pre-processing):</h5>
                       <div className="flex flex-wrap gap-1">
                         {safeArray(manhwa.genres).map((genre) => (
                           <span key={genre} className="px-2 py-1 bg-primary/10 text-primary rounded text-xs">
@@ -307,11 +333,31 @@ async function CalculationPage(props: CalculationPageProps) {
                       </div>
                     </div>
                     <div>
-                      <h5 className="font-medium text-sm mb-2">Tags:</h5>
+                      <h5 className="font-medium text-sm mb-2">Genres (After Pre-processing):</h5>
+                      <div className="flex flex-wrap gap-1">
+                        {safeArray(manhwa.genres).map((genre) => (
+                          <span key={genre} className="px-2 py-1 bg-blue-100 text-blue-700 rounded text-xs">
+                            {genre.toLowerCase().replace(/[^a-z0-9\s]/g, '').replace(/\s+/g, '_')}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                    <div>
+                      <h5 className="font-medium text-sm mb-2">Tags (Before Pre-processing):</h5>
                       <div className="flex flex-wrap gap-1 max-h-24 overflow-y-auto">
                         {safeArray(manhwa.tags).map((tag) => (
                           <span key={tag} className="px-2 py-1 bg-primary/10 text-primary rounded text-xs">
                             {tag}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                    <div>
+                      <h5 className="font-medium text-sm mb-2">Tags (After Pre-processing):</h5>
+                      <div className="flex flex-wrap gap-1 max-h-24 overflow-y-auto">
+                        {safeArray(manhwa.tags).map((tag) => (
+                          <span key={tag} className="px-2 py-1 bg-blue-100 text-blue-700 rounded text-xs">
+                            {tag.toLowerCase().replace(/[^a-z0-9\s]/g, '').replace(/\s+/g, '_')}
                           </span>
                         ))}
                       </div>

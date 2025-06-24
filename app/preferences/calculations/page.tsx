@@ -209,28 +209,52 @@ export default async function PreferenceCalculationsPage({ searchParams }: Prefe
               <Filter className="h-4 w-4 text-muted-foreground" />
               <span className="font-medium">Your Preferences</span>
             </div>
-            <div className="space-y-2">
+            <div className="space-y-4">
               {userGenres.length > 0 && (
-                <div>
-                  <span className="text-sm text-muted-foreground mr-2">Selected Genres:</span>
-                  <div className="inline-flex flex-wrap gap-1">
-                    {userGenres.map((genre) => (
-                      <Badge key={genre} variant="secondary" className="text-xs">
-                        {genre}
-                      </Badge>
-                    ))}
+                <div className="space-y-2">
+                  <div>
+                    <span className="text-sm text-muted-foreground mr-2">Selected Genres (Before Pre-processing):</span>
+                    <div className="inline-flex flex-wrap gap-1">
+                      {userGenres.map((genre) => (
+                        <Badge key={genre} variant="secondary" className="text-xs">
+                          {genre}
+                        </Badge>
+                      ))}
+                    </div>
+                  </div>
+                  <div>
+                    <span className="text-sm text-muted-foreground mr-2">Selected Genres (After Pre-processing):</span>
+                    <div className="inline-flex flex-wrap gap-1">
+                      {userGenres.map((genre) => (
+                        <Badge key={genre} variant="outline" className="text-xs bg-blue-100 text-blue-700 border-blue-200">
+                          {genre.toLowerCase().replace(/[^a-z0-9\s]/g, '').replace(/\s+/g, '_')}
+                        </Badge>
+                      ))}
+                    </div>
                   </div>
                 </div>
               )}
               {userTags.length > 0 && (
-                <div>
-                  <span className="text-sm text-muted-foreground mr-2">Selected Tags:</span>
-                  <div className="inline-flex flex-wrap gap-1">
-                    {userTags.map((tag) => (
-                      <Badge key={tag} variant="secondary" className="text-xs">
-                        {tag}
-                      </Badge>
-                    ))}
+                <div className="space-y-2">
+                  <div>
+                    <span className="text-sm text-muted-foreground mr-2">Selected Tags (Before Pre-processing):</span>
+                    <div className="inline-flex flex-wrap gap-1">
+                      {userTags.map((tag) => (
+                        <Badge key={tag} variant="secondary" className="text-xs">
+                          {tag}
+                        </Badge>
+                      ))}
+                    </div>
+                  </div>
+                  <div>
+                    <span className="text-sm text-muted-foreground mr-2">Selected Tags (After Pre-processing):</span>
+                    <div className="inline-flex flex-wrap gap-1">
+                      {userTags.map((tag) => (
+                        <Badge key={tag} variant="outline" className="text-xs bg-blue-100 text-blue-700 border-blue-200">
+                          {tag.toLowerCase().replace(/[^a-z0-9\s]/g, '').replace(/\s+/g, '_')}
+                        </Badge>
+                      ))}
+                    </div>
                   </div>
                 </div>
               )}

@@ -121,7 +121,21 @@ function parseArrayField(field: string): string[] {
   // Split by comma and clean each item
   return cleaned
     .split(",")
-    .map((item) => item.trim().replace(/['"]/g, ""))
+    .map((item) => {
+      // Trim whitespace and remove quotes
+      let normalizedItem = item.trim().replace(/['"]*/g, "")
+      
+      // Convert to lowercase
+      normalizedItem = normalizedItem.toLowerCase()
+      
+      // Replace spaces with underscores for multiword terms
+      normalizedItem = normalizedItem.replace(/\s+/g, "_")
+      
+      // Remove remaining symbols and punctuation (except underscores)
+      normalizedItem = normalizedItem.replace(/[^\w_]/g, "")
+      
+      return normalizedItem
+    })
     .filter((item) => item.length > 0)
 }
 
