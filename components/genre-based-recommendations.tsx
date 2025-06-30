@@ -11,15 +11,29 @@ import { ManhwaCard } from "@/components/manhwa-card"
 import type { Manhwa } from "@/lib/types"
 import { getAllManhwaSync } from "@/lib/manhwa-service"
 
-// Extract unique genres and tags from the dataset
+// Define unethical content to filter out (same as in manhwa-search.tsx)
+const BLOCKED_GENRES = ["Hentai", "Ecchi", "Adult", "Mature", "Smut"];
+const BLOCKED_TAGS = ["Nudity", "Boys' Love", "Sexual Content", "Sexual Violence", "Anal", "Harem", "Reverse Harem", "Gender Bender", "Anal Sex", "DILF", "Deepthroat", "Double Penetration", "Armpits", "Asexual", "Ashikoki", "Bisexual", "Asphyxiation", "Cheating", "Erotic Piercings", "Masturbation", "Pregnancy", "Prostitution", "Rape", "Psychosexual", "Public Sex", "Rimjob", "Transgender", "Virginity"];
+
+// Extract unique genres and tags from the dataset, filtering out NSFW content
 function extractUniqueGenresAndTags() {
   const allManhwa = getAllManhwaSync()
   const uniqueGenres = new Set<string>()
   const uniqueTags = new Set<string>()
 
   allManhwa.forEach((manhwa) => {
-    manhwa.genres.forEach((genre) => uniqueGenres.add(genre))
-    manhwa.tags.forEach((tag) => uniqueTags.add(tag))
+    manhwa.genres.forEach((genre) => {
+      // Filter out blocked genres
+      if (!BLOCKED_GENRES.includes(genre)) {
+        uniqueGenres.add(genre)
+      }
+    })
+    manhwa.tags.forEach((tag) => {
+      // Filter out blocked tags
+      if (!BLOCKED_TAGS.includes(tag)) {
+        uniqueTags.add(tag)
+      }
+    })
   })
 
   return {

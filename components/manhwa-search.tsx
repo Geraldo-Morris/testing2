@@ -23,8 +23,8 @@ import { Collapsible, CollapsibleContent } from "@/components/ui/collapsible"
 
 // Dynamic genre and tag extraction from loaded data
 // Define unethical content to filter out
-const BLOCKED_GENRES = ["Hentai"];
-const BLOCKED_TAGS = ["Nudity", "Boys' Love", "Heterosexual"];
+const BLOCKED_GENRES = ["Hentai", "Ecchi", "Adult", "Mature", "Smut"];
+const BLOCKED_TAGS = ["Nudity", "Boys' Love", "Sexual Content", "Sexual Violence", "Anal", "Harem", "Reverse Harem", "Gender Bender", "Anal Sex", "DILF", "Deepthroat", "Double Penetration", "Armpits", "Asexual", "Ashikoki", "Bisexual", "Asphyxiation", "Cheating", "Erotic Piercings", "Masturbation", "Pregnancy", "Prostitution", "Rape", "Psychosexual", "Public Sex", "Rimjob", "Transgender", "Virginity"];
 
 function getAvailableGenres(): string[] {
   const allManhwa = getAllManhwaSync();
